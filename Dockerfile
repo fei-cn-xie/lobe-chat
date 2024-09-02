@@ -18,6 +18,7 @@ ENV NEXT_PUBLIC_SENTRY_DSN="" \
     SENTRY_ORG="" \
     SENTRY_PROJECT=""
 
+    
 # Posthog
 ENV NEXT_PUBLIC_ANALYTICS_POSTHOG="" \
     NEXT_PUBLIC_POSTHOG_HOST="" \
@@ -60,7 +61,7 @@ COPY . .
 RUN npm run build:docker
 
 ## Application image, copy all the files for production
-FROM scratch AS app
+FROM scratch AS appxx
 
 COPY --from=builder /app/public /app/public
 
